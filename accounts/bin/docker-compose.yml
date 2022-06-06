@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  accounts:
+    image: accounts:latest
+    mem_limit: 700m
+    ports:
+      - "8085:8085"
+    networks:
+      - trantor-network
+
+  loans:
+    image: loans:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8090:8090"
+    networks:
+      - trantor-network
+
+  cards:
+    image: cards:latest
+    mem_limit: 700m
+    ports:
+      - "9000:9000"
+    networks:
+      - trantor-network
+
+networks:
+  trantor-network:
